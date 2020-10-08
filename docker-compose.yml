@@ -1,0 +1,24 @@
+version: "3.0"
+
+services:
+  anyApp:
+    build:
+      context: src/${PROJECT_LANG:-python}
+    entrypoint: ["sh", "-c", "pip install -r requirements.txt && python app.py"]
+    image: ${DOCKER_REPO:-mcano}/${PROJECT_LANG:-python}-expert:v1.0
+    environment:
+      - FOO=bar
+      - VAR=var
+      - REDIS_HOST=db
+    #init: true
+    ports:
+      - 8080:8080
+    # working_dir: /code/
+    # volumes:
+      - ./src/${PROJECT_LANG:-python}:/code
+# # FQDN == fully qualified domain name
+  # db:
+  #   image: redis:alpine
+  #   restart: on-failure
+  #   volumes:
+  #     - redis-vol:/data
