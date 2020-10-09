@@ -3,7 +3,7 @@ kind: Application
 metadata:
   finalizers:
   - resources-finalizer.argocd.argoproj.io
-  name: backend
+  name: frontend
   namespace: argocd
 spec:
   destination:
