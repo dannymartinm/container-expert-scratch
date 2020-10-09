@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: front
-        image: 609609837128.dkr.ecr.us-east-2.amazonaws.com/daniela-python
+        image: 609609837128.dkr.ecr.us-east-2.amazonaws.com/daniela-python:d7599cf
         ports:
         - name: http
           containerPort: 8080
